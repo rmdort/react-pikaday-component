@@ -1,17 +1,18 @@
-# ReactPikadayComponent
+# React Pikaday Datepicker
 
-[![build status](http://img.shields.io/travis/voronianski/react-pikaday-component.svg?style=flat)](https://travis-ci.org/voronianski/react-pikaday-component)
-[![npm version](http://badge.fury.io/js/react-pikaday-component.svg)](http://badge.fury.io/js/react-pikaday-component)
-[![Download Count](http://img.shields.io/npm/dm/react-pikaday-component.svg?style=flat)](http://www.npmjs.com/package/react-pikaday-component)
+Based on [https://www.npmjs.com/package/react-pikaday-datepicker](https://www.npmjs.com/package/react-pikaday-datepicker)
+
+[![build status](http://img.shields.io/travis/rmdort/react-pikaday-datepicker.svg?style=flat)](https://travis-ci.org/rmdort/react-pikaday-datepicker)
+[![npm version](http://badge.fury.io/js/react-pikaday-datepicker.svg)](http://badge.fury.io/js/react-pikaday-component)
+[![Download Count](http://img.shields.io/npm/dm/react-pikaday-datepicker.svg?style=flat)](http://www.npmjs.com/package/react-pikaday-datepicker)
 
 > Universal React component wrapper around [Pikaday.js](https://github.com/dbushell/Pikaday) datepicker.
 
-<img src="https://dl.dropboxusercontent.com/u/100463011/react-pikaday-component.gif" width="600" />
 
 ## Install
 
 ```bash
-npm install react pikaday react-pikaday-component --save
+npm install react-pikaday-datepicker --save
 ```
 
 ## Usage
@@ -19,7 +20,7 @@ npm install react pikaday react-pikaday-component --save
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DatePicker from 'react-pikaday-component';
+import DatePicker from 'react-pikaday-datepicker';
 
 class App extends React.Component {
   constructor() {

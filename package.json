@@ -1,6 +1,6 @@
 {
-  "name": "react-pikaday-component",
-  "version": "2.1.5-field-type",
+  "name": "react-pikaday-datepicker",
+  "version": "1.0.0",
   "description": "React component wrapper around Pikaday.js",
   "main": "index.js",
   "directories": {
@@ -25,12 +25,12 @@
     "universal",
     "pikaday"
   ],
-  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "author": "Vinay M <rmdort@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/voronianski/react-pikaday-component/issues"
+    "url": "https://github.com/rmdort/react-pikaday-component/issues"
   },
-  "homepage": "https://github.com/voronianski/react-pikaday-component#readme",
+  "homepage": "https://github.com/rmdort/react-pikaday-component#readme",
   "devDependencies": {
     "ava": "^0.13.0",
     "babel-cli": "^6.6.5",
@@ -60,5 +60,8 @@
     "webpack": "^1.12.14",
     "webpack-umd-external": "^1.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "pikaday": "^1.6.1",
+    "prop-types": "^15.5.10"
+  }
 }
