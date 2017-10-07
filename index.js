@@ -35,9 +35,19 @@ var ReactPikadayComponent = function (_React$Component) {
     _inherits(ReactPikadayComponent, _React$Component);
 
     function ReactPikadayComponent() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, ReactPikadayComponent);
 
-        return _possibleConstructorReturn(this, (ReactPikadayComponent.__proto__ || Object.getPrototypeOf(ReactPikadayComponent)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ReactPikadayComponent.__proto__ || Object.getPrototypeOf(ReactPikadayComponent)).call.apply(_ref, [this].concat(args))), _this), _this.registerRef = function (el) {
+            _this.pikadayEl = el;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(ReactPikadayComponent, [{
@@ -55,9 +65,9 @@ var ReactPikadayComponent = function (_React$Component) {
             var newDate = this._getValueLink(nextProps).value;
             var lastDate = this._getValueLink(this.props).value;
 
-            this._setDateIfChanged(newDate, lastDate);
             this._setMinDateIfChanged(nextProps.minDate, this.props.minDate);
             this._setMaxDateIfChanged(nextProps.maxDate, this.props.maxDate);
+            this._setDateIfChanged(newDate, lastDate);
         }
     }, {
         key: 'componentDidUpdate',
@@ -95,7 +105,7 @@ var ReactPikadayComponent = function (_React$Component) {
             return _react2.default.createElement('input', {
                 id: id,
                 type: type,
-                ref: 'pikaday',
+                ref: this.registerRef,
                 name: name,
                 className: className,
                 style: style,
@@ -116,7 +126,7 @@ var ReactPikadayComponent = function (_React$Component) {
     }, {
         key: '_setupPikaday',
         value: function _setupPikaday() {
-            var el = this.refs.pikaday;
+            var el = this.pikadayEl;
 
             var _getValueLink3 = this._getValueLink(this.props),
                 requestChange = _getValueLink3.requestChange;

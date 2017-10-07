@@ -42,9 +42,9 @@ class ReactPikadayComponent extends React.Component {
         const newDate = this._getValueLink(nextProps).value;
         const lastDate = this._getValueLink(this.props).value;
 
-        this._setDateIfChanged(newDate, lastDate);
         this._setMinDateIfChanged(nextProps.minDate, this.props.minDate);
         this._setMaxDateIfChanged(nextProps.maxDate, this.props.maxDate);
+        this._setDateIfChanged(newDate, lastDate);
     }
 
     componentDidUpdate(prevProps) {
@@ -63,6 +63,10 @@ class ReactPikadayComponent extends React.Component {
         this.pikaday.destroy();
     }
 
+    registerRef = (el) => {
+        this.pikadayEl = el;
+    };
+
     render() {
         const { id, type, className, name, tabIndex, disabled, placeholder, readOnly, style } = this.props;
 
@@ -70,7 +74,7 @@ class ReactPikadayComponent extends React.Component {
             <input
                 id={id}
                 type={type}
-                ref="pikaday"
+                ref={this.registerRef}
                 name={name}
                 className={className}
                 style={style}
@@ -90,7 +94,7 @@ class ReactPikadayComponent extends React.Component {
     }
 
     _setupPikaday() {
-        const el = this.refs.pikaday;
+        const el = this.pikadayEl;
         const { requestChange } = this._getValueLink(this.props);
         const { value, onChange, valueLink, ...pikadayOptions } = this.props; // eslint-disable-line no-unused-vars
         const options = Object.assign({}, pikadayOptions, {
